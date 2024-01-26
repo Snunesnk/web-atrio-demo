@@ -1,0 +1,32 @@
+#navbar {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 6rem;
+    margin-right: 3rem;
+}
+
+#navbar ul li {
+    position: relative;
+    cursor: pointer;
+    width: 3rem;
+}
+
+#navbar .main-icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
