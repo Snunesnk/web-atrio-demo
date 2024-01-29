@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  front:
+    container_name: front
+    build:
+      context: ./front
+    ports:
+      - 3042:3042
+    env_file: ./front/.env
+    networks:
+      - public
+
+  server:
+    container_name: server
+    build:
+      context: ./server
+    ports:
+      - 5042:5042
+    env_file: ./server/.env
+    networks:
+      - public
+      - private
+
+  database:
+    container_name: database
+    build:
+      context: ./database
+    ports:
+      - 5432:5432
+    env_file: ./server/.env
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
+    networks:
+      - private
+
+volumes:
+  database:
+
+networks:
+  public:
+  private:
+    driver: bridge
+
